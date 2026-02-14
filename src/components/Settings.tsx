@@ -6,6 +6,7 @@ const THEMES: { id: ThemeId; label: string; icon: string }[] = [
   { id: 'light', label: 'Light', icon: '☀️' },
   { id: 'sepia', label: 'Sepia', icon: '📜' },
   { id: 'ocean', label: 'Ocean', icon: '🌊' },
+  { id: 'dashboard', label: 'Dashboard', icon: '📋' },
 ]
 
 interface SettingsProps {

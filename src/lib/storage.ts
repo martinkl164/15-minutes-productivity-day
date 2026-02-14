@@ -1,6 +1,6 @@
 const SETTINGS_KEY = '15min-settings'
 
-export type ThemeId = 'dark' | 'light' | 'sepia' | 'ocean'
+export type ThemeId = 'dark' | 'light' | 'sepia' | 'ocean' | 'dashboard'
 
 export interface Settings {
   dayStartTime: string
@@ -20,7 +20,7 @@ export function loadSettings(): Settings {
     if (!raw) return { ...DEFAULT_SETTINGS } as Settings
     const parsed = JSON.parse(raw) as Partial<Settings>
     const theme = parsed.theme ?? DEFAULT_SETTINGS.theme
-    const validTheme: ThemeId = ['dark', 'light', 'sepia', 'ocean'].includes(theme) ? theme : 'dark'
+    const validTheme: ThemeId = ['dark', 'light', 'sepia', 'ocean', 'dashboard'].includes(theme) ? theme : 'dark'
     return {
       dayStartTime: parsed.dayStartTime ?? DEFAULT_SETTINGS.dayStartTime,
       dayEndTime: parsed.dayEndTime ?? DEFAULT_SETTINGS.dayEndTime,

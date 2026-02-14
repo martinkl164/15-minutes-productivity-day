@@ -7,7 +7,7 @@
     <script>
       try {
         var s = JSON.parse(localStorage.getItem('15min-settings'));
-        if (s && s.theme && ['dark','light','sepia','ocean'].indexOf(s.theme) >= 0)
+        if (s && s.theme && ['dark','light','sepia','ocean','dashboard'].indexOf(s.theme) >= 0)
           document.documentElement.setAttribute('data-theme', s.theme);
       } catch (e) {}
     </script>

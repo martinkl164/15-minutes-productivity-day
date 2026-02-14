@@ -6,7 +6,7 @@ import { getCurrentSlotIndex, getCurrentSlotFraction, isSlotWithinNext30Min, typ
 import { SlotCard } from './SlotCard'
 import { useTimer } from '../hooks/useTimer'
 
-const SLOT_ROW_HEIGHT = 32
+const SLOT_ROW_HEIGHT = 26
 
 interface DayViewProps {
   dateKey: string
