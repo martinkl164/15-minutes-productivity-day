@@ -1,0 +1,208 @@
+{
+  "description": "Design system for replicating the Billing History / modern dashboard UI. Use this file as the single source of truth when building or styling UI in this project.",
+  "meta": {
+    "purpose": "High-level design guidelines for AI and developers to replicate a modern, professional, approachable UI. Treat as creative-director-level instructions.",
+    "audience": "AI code generation, frontend implementation, design consistency"
+  },
+
+  "designPrinciples": {
+    "summary": "The interface should feel modern and minimalist, professional and trustworthy, yet approachable and friendly. Every screen must have clear hierarchy, consistent visual language, and excellent readability.",
+    "principles": [
+      {
+        "name": "Modern & Minimalist",
+        "guideline": "Clean aesthetic with ample white space, simple iconography, uncluttered layouts. Avoid heavy embellishments; focus on functionality and content."
+      },
+      {
+        "name": "Professional & Trustworthy",
+        "guideline": "Color palette, typography, and structured presentation convey reliability. Suitable for administrative and data-heavy screens."
+      },
+      {
+        "name": "Approachable & Friendly",
+        "guideline": "Rounded corners on UI elements, subtle gradients, and soft accents add warmth without sacrificing clarity."
+      },
+      {
+        "name": "Clear Hierarchy",
+        "guideline": "Use font size, weight, and color to guide attention: main titles → secondary info → detailed data → actions. Never flatten importance."
+      },
+      {
+        "name": "Consistency",
+        "guideline": "Apply the same typography scale, color usage, spacing increments, and corner radii everywhere. One visual language across the app."
+      },
+      {
+        "name": "Readability",
+        "guideline": "Strong text contrast, generous spacing in tables and lists, and legible font sizes for all content."
+      }
+    ]
+  },
+
+  "structureAndLayout": {
+    "pageContainer": "Content lives inside a single prominent card-like container. Do not fill the full viewport with raw content.",
+    "mainContentCard": {
+      "description": "Primary content block that holds sections (header, table/list, pagination).",
+      "rules": [
+        "One main white card per view/section when appropriate",
+        "Lifted appearance via subtle shadow, not heavy borders",
+        "Content never bleeds to viewport edges without padding"
+      ]
+    },
+    "headerSection": {
+      "layout": "Left: title + optional count + subtitle. Right: primary actions (e.g. Export, Download).",
+      "rule": "Keep title and actions on one row; use flex/grid to separate left and right."
+    },
+    "dataSection": "Tables or lists with clear header row and row separators. No dense walls of text.",
+    "footerSection": "Pagination and/or results summary (e.g. 'Showing X of Y') at bottom, centered or right-aligned as appropriate."
+  },
+
+  "spacing": {
+    "system": "Prefer a base unit (e.g. 4px or 8px) and derive all spacing from it.",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "2xl": "40px"
+    },
+    "usage": {
+      "containerPadding": "24px–32px from card edge to content",
+      "sectionGaps": "Consistent vertical gaps between header, table, and pagination (e.g. 24px)",
+      "componentGaps": "8–16px between buttons; comfortable horizontal spacing between table columns",
+      "verticalRhythm": "Consistent gaps between text lines, list rows, and component groups"
+    }
+  },
+
+  "typography": {
+    "fontFamily": "Modern sans-serif: prefer 'Inter', 'Roboto', or similar. Highly legible with clear weight differentiation.",
+    "scale": {
+      "h1": { "size": "24–28px", "weight": "700", "colorRef": "text.primary", "usage": "Page/section main title" },
+      "countOrBadge": { "size": "12–14px", "weight": "400", "colorRef": "text.secondary", "usage": "Total count, small labels" },
+      "subtitle": { "size": "14–16px", "weight": "400", "colorRef": "text.secondary", "usage": "Short description under title" },
+      "body": { "size": "14–16px", "weight": "400", "colorRef": "text.primary", "usage": "Table cells, paragraphs" },
+      "tableHeader": { "size": "14–16px", "weight": "500–600", "colorRef": "text.primary", "usage": "Column headers" },
+      "button": { "size": "14–16px", "weight": "500", "usage": "Button label text" },
+      "small": { "size": "12–14px", "weight": "400", "colorRef": "text.secondary", "usage": "Results summary, captions" },
+      "statusBadge": { "size": "12–14px", "weight": "600", "usage": "Paid, Failed, Pending badges" }
+    },
+    "rule": "Never use more than two font families. Differentiate by size and weight, not by switching fonts."
+  },
+
+  "colors": {
+    "semantic": {
+      "primary": {
+        "description": "Brand accent: primary actions, active states, checked checkboxes",
+        "hex": "#6D28D9",
+        "hexAlt": "#7C3AED",
+        "usage": "Primary button background, active pagination, checkbox checked"
+      },
+      "success": {
+        "description": "Positive/paid status",
+        "bg": "#E0E7FF",
+        "text": "#4F46E5"
+      },
+      "error": {
+        "description": "Failed/error status",
+        "bg": "#FEE2E2",
+        "text": "#DC2626"
+      }
+    },
+    "text": {
+      "primary": "#2C2C2C",
+      "primaryAlt": "#333333",
+      "secondary": "#666666",
+      "tertiary": "#888888"
+    },
+    "backgrounds": {
+      "card": "#FFFFFF",
+      "page": "Subtle gradient: light blue at top to light violet at bottom. Adds depth; keep very soft.",
+      "rowHover": "#F8FAFC or #F0F4FF"
+    },
+    "borders": {
+      "default": "#E0E0E0",
+      "light": "#EEEEEE",
+      "input": "#D1D5DB"
+    }
+  },
+
+  "bordersAndShadows": {
+    "radius": {
+      "sm": "4–6px",
+      "md": "8–12px",
+      "lg": "16–24px",
+      "full": "50% (pills, circular buttons)"
+    },
+    "shadows": {
+      "card": "0 4px 12px rgba(0, 0, 0, 0.05)",
+      "buttonPrimary": "0 2px 8px rgba(109, 40, 217, 0.2)"
+    }
+  },
+
+  "components": {
+    "container": {
+      "description": "Main content card wrapping a view.",
+      "style": "Background white, border-radius 16–24px, subtle drop shadow. Generous internal padding (24–32px)."
+    },
+    "button": {
+      "primary": {
+        "background": "#6D28D9",
+        "color": "#FFFFFF",
+        "borderRadius": "8–12px",
+        "padding": "10–14px vertical, 24–32px horizontal",
+        "shadow": "Subtle purple-tinted shadow",
+        "icon": "Same color as text (white)"
+      },
+      "secondary": {
+        "background": "#FFFFFF",
+        "color": "#333333",
+        "border": "1px solid #D1D5DB",
+        "borderRadius": "8–12px",
+        "padding": "Same as primary",
+        "icon": "Same as text (dark grey)"
+      }
+    },
+    "table": {
+      "header": "Medium weight, dark text; optional small sort chevrons in medium grey.",
+      "row": "White background; thin bottom border (#EEEEEE); hover: subtle light grey/blue fill (#F8FAFC).",
+      "cellPadding": "Comfortable vertical and horizontal padding for readability."
+    },
+    "checkbox": {
+      "unchecked": "White background, light grey border (#D1D5DB), small border-radius (4–6px).",
+      "checked": "Violet background (#6D28D9), white checkmark."
+    },
+    "statusBadge": {
+      "shape": "Rounded rectangle (pill).",
+      "paid": "Background #E0E7FF, text #4F46E5.",
+      "failed": "Background #FEE2E2, text #DC2626.",
+      "padding": "Small horizontal and vertical for compact badge."
+    },
+    "pagination": {
+      "inactive": "Dark grey text, no background.",
+      "active": "White text on violet circular/pill background (#6D28D9).",
+      "prevNext": "Dark text with chevron icons.",
+      "resultsSummary": "Small, medium grey (e.g. 'Showing 100 of 1,000 results')."
+    },
+    "icons": {
+      "style": "Outline/simple; not filled unless indicating state.",
+      "color": "Match context: white on primary buttons, medium grey (#888888) for secondary actions (e.g. row download)."
+    }
+  },
+
+  "aiInstructions": {
+    "whenBuildingUI": [
+      "Always use the color hex values or semantic names from this file; do not invent new greys or purples.",
+      "Apply the spacing scale (xs–2xl) for padding and margins; avoid arbitrary values like 13px or 19px.",
+      "Use the typography scale for all text; main titles bold and large, body regular, labels/small text in secondary color.",
+      "Put primary content in a white card with large border-radius and subtle shadow when the layout matches the reference.",
+      "Buttons: primary for main action (violet), secondary for Export-style actions (white + border).",
+      "Tables/lists: header row with medium weight, row dividers, hover state. Checkboxes violet when checked.",
+      "Status indicators: pill-shaped badges with success (blue-purple) and error (red) as defined.",
+      "Pagination: active page with violet background and white text; inactive pages and prev/next in dark grey.",
+      "Keep the page background subtle (light gradient) so the white content card stands out."
+    ],
+    "avoid": [
+      "Flat, boxy corners on cards and buttons (use the radius scale).",
+      "Pure black (#000) for text; use the defined dark greys.",
+      "Multiple accent colors; violet/purple is the single primary accent.",
+      "Cluttered layouts; preserve white space and hierarchy."
+    ]
+  }
+}
